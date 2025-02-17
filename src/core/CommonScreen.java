@@ -16,7 +16,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import balogging.BALoggerUtil;
 import highscores.NameInput;
 import utils.Tools;
 
@@ -24,7 +23,6 @@ public class CommonScreen extends ConfigScreen{
 
 	protected JFrame screenPage = null;
 	protected Tools utils;
-	protected BALoggerUtil balogger;
 	protected Properties properties;
 	protected ButtonHandlerScreen handler;
 	protected JDesktopPane gameArea;
