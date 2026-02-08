@@ -23,7 +23,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import balogging.BALoggerUtil;
 import highscores.HighScores;
 import highscores.IBoardOutline;
 import highscores.NameInput;
@@ -37,10 +36,8 @@ public class Screen extends UtilsScreenRoot implements IBoardOutline{
 	boolean stopFlag = false;
 	
 	private final String PRODUCT_NAME = "pattern_game";
-	private String userDir;
 	
-	public Screen(String usrDir){
-		userDir = usrDir;
+	public Screen(){
 		output = new DecimalFormat(OUTPUT_FORMAT);
 	}
 	
@@ -169,7 +166,7 @@ public class Screen extends UtilsScreenRoot implements IBoardOutline{
 					JOptionPane.INFORMATION_MESSAGE,
 					new ImageIcon(properties.getImageDir() + File.separator + "company.png"));
 			
-			nameInput = new NameInput(properties.getRoot(), this, PRODUCT_NAME, userDir);
+			nameInput = new NameInput(properties.getRoot(), this, PRODUCT_NAME, "");
 			int currentScore = Integer.parseInt(score.getText());
 			stopAction();
 			nameInput.setDescending();
@@ -290,7 +287,6 @@ public class Screen extends UtilsScreenRoot implements IBoardOutline{
 	}
 	
 	public void startAction(){
-		balogger.startTimer();
 		lastTime = System.currentTimeMillis();
 		start.setEnabled(false);
 		stop.setEnabled(true);
@@ -303,8 +299,6 @@ public class Screen extends UtilsScreenRoot implements IBoardOutline{
 	}
 	
 	public synchronized void stopAction() throws IOException{
-		balogger.stopTimer();
-		balogger.logScore("", score.getText());
 		started = false;
 		remove = false;
 		replace = false;
@@ -346,7 +340,6 @@ public class Screen extends UtilsScreenRoot implements IBoardOutline{
 		}
 		
 		if(screenPage == null){
-			balogger = new BALoggerUtil(properties.getRoot(), PRODUCT_NAME, userDir);
 			create();
 		}
 	}
