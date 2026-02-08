@@ -2,6 +2,7 @@
  * @author mike802
  * 
  * product of - ???
+ * brand-aware
  * 2017
  */
 package core;
@@ -35,7 +36,11 @@ public class Screen extends UtilsScreenRoot implements IBoardOutline{
 	boolean linearRemove = true;
 	boolean stopFlag = false;
 	
-	public Screen(){
+	private final String PRODUCT_NAME = "pattern_game";
+	private String userDir;
+	
+	public Screen(String usrDir){
+		userDir = usrDir;
 		output = new DecimalFormat(OUTPUT_FORMAT);
 	}
 	
@@ -149,7 +154,7 @@ public class Screen extends UtilsScreenRoot implements IBoardOutline{
 		}
 	}
 	
-	private void doUpdateTime() throws IOException {
+	private synchronized void doUpdateTime() throws IOException {
 		Long currentTime = System.currentTimeMillis();
 		double difference = currentTime - lastTime;
 		double current = difference *.001;
@@ -158,13 +163,13 @@ public class Screen extends UtilsScreenRoot implements IBoardOutline{
 		time.setText(output.format(timeLeft));
 		lastTime = currentTime;
 		if(timeLeft <= 0){
-			JOptionPane.showMessageDialog(null, 
+			JOptionPane.showMessageDialog(screenPage, 
 					"GAME OVER",
 					"time expired!",
 					JOptionPane.INFORMATION_MESSAGE,
 					new ImageIcon(properties.getImageDir() + File.separator + "company.png"));
 			
-			nameInput = new NameInput(properties.getRoot(), this);
+			nameInput = new NameInput(properties.getRoot(), this, PRODUCT_NAME, userDir);
 			int currentScore = Integer.parseInt(score.getText());
 			stopAction();
 			nameInput.setDescending();
@@ -341,7 +346,7 @@ public class Screen extends UtilsScreenRoot implements IBoardOutline{
 		}
 		
 		if(screenPage == null){
-			balogger = new BALoggerUtil(properties.getRoot(), "pattern_game");
+			balogger = new BALoggerUtil(properties.getRoot(), PRODUCT_NAME, userDir);
 			create();
 		}
 	}
@@ -383,5 +388,15 @@ public class Screen extends UtilsScreenRoot implements IBoardOutline{
 			e.printStackTrace();
 		}
 		
+	}
+
+	@Override
+	public int getFrameHeight() {
+		return totalHeight;
+	}
+
+	@Override
+	public int getFrameWidth() {
+		return GAME_WIDTH;
 	}
 }
