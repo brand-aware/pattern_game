@@ -14,8 +14,8 @@ public class driver {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		String currentDir = System.getProperty("user.dir");
-		Properties properties = new Properties(currentDir);
+		//String currentDir = System.getProperty("user.dir");
+		Properties properties = new Properties();
 		Screen screen = new Screen();
 		screen.init(properties);
 		properties.setScreen(screen);

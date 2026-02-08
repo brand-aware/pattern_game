@@ -44,8 +44,7 @@ public class Screen extends UtilsScreenRoot implements IBoardOutline{
 	private void create(){
 		screenPage = new JFrame(HEADER);
 		screenPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		String imageDir = properties.getImageDir();
-		Image imageIcon = Toolkit.getDefaultToolkit().getImage(imageDir + File.separator + "company.png");
+		Image imageIcon = Toolkit.getDefaultToolkit().getImage("company.png");
 		screenPage.setIconImage(imageIcon);
 		screenPage.setResizable(false);
 		screenPage.setPreferredSize(new Dimension(GAME_WIDTH + 5, totalHeight + 64));
@@ -164,9 +163,9 @@ public class Screen extends UtilsScreenRoot implements IBoardOutline{
 					"GAME OVER",
 					"time expired!",
 					JOptionPane.INFORMATION_MESSAGE,
-					new ImageIcon(properties.getImageDir() + File.separator + "company.png"));
+					new ImageIcon("company.png"));
 			
-			nameInput = new NameInput(properties.getRoot(), this, PRODUCT_NAME, "");
+			nameInput = new NameInput("", this, PRODUCT_NAME, "");
 			int currentScore = Integer.parseInt(score.getText());
 			stopAction();
 			nameInput.setDescending();

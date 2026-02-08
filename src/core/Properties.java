@@ -11,7 +11,6 @@ import java.io.File;
 public class Properties {
 	
 	private Screen screen;
-	private String rootDir;
 	private String[] shapes;
 	private String background;
 	private String backgroundMatching;
@@ -21,30 +20,26 @@ public class Properties {
 	private String cover;
 	private String gameBackground;
 	
-	public Properties(String root){
-		rootDir = root;
+	public Properties(){
 		
 		shapes = new String[]{
-				rootDir + File.separator + "img" + File.separator + "shape1.png",
-				rootDir + File.separator + "img" + File.separator + "shape2.png",
-				rootDir + File.separator + "img" + File.separator + "shape3.png",
-				rootDir + File.separator + "img" + File.separator + "shape4.png",
-				rootDir + File.separator + "img" + File.separator + "shape5.png",
-				rootDir + File.separator + "img" + File.separator + "shape6.png"
+				"shape1.png",
+				"shape2.png",
+				"shape3.png",
+				"shape4.png",
+				"shape5.png",
+				"shape6.png"
 		};
 		
-		background = rootDir + File.separator + "img" + File.separator + "background.png";
-		backgroundMatching = rootDir + File.separator + "img" + File.separator + "background_matching.png";
-		title = rootDir + File.separator + "img" + File.separator + "logo.png";
-		highScores = rootDir + File.separator + "high_scores";
-		cover = rootDir + File.separator + "img" + File.separator + "cover.png";
-		gameBackground = rootDir + File.separator + "img" + File.separator + "gameBackground.png";
-		removedImg = rootDir + File.separator + "img" + File.separator + "removed.png";
+		background = "background.png";
+		backgroundMatching = "background_matching.png";
+		title = "logo.png";
+		highScores = "high_scores";
+		cover = "cover.png";
+		gameBackground = "gameBackground.png";
+		removedImg = "removed.png";
 	}
 	
-	public String getRoot(){
-		return rootDir;
-	}
 	public String getShape(int index){
 		return shapes[index];
 	}
@@ -68,9 +63,6 @@ public class Properties {
 	}
 	public String getCover(){
 		return cover;
-	}
-	public String getImageDir(){
-		return rootDir + File.separator + "img";
 	}
 	public void setScreen(Screen s){
 		screen = s;
