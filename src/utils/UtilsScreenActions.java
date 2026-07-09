@@ -6,6 +6,8 @@
  */
 package utils;
 
+import java.net.URL;
+
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -20,7 +22,7 @@ public class UtilsScreenActions extends CommonScreen{
 		for(int x = 0; x < size; x++){
 			int index = connected.get(x);
 			//System.out.println(index);
-			String backgroundMatching = properties.getBackgroundMatching();
+			URL backgroundMatching = properties.getBackgroundMatching();
 			icon = new ImageIcon(backgroundMatching);
 			JLabel background = allBackgrounds.get(index);
 			background.setIcon(icon);
@@ -46,7 +48,7 @@ public class UtilsScreenActions extends CommonScreen{
 			int size = connected.size();
 			for(int x = 0; x < size; x++){
 				int index = connected.get(x);
-				String backgroundPath = properties.getBackground();
+				URL backgroundPath = properties.getBackground();
 				icon = new ImageIcon(backgroundPath);
 				JLabel background = allBackgrounds.get(index);
 				background.setIcon(icon);
@@ -159,7 +161,7 @@ public class UtilsScreenActions extends CommonScreen{
 	 */
 	protected void addOne(int index){
 		//System.out.println("addOne to: " + index);
-		String block = getBlock(index);
+		URL block = getBlock(index);
 		ImageIcon icon = new ImageIcon(block);
 		blocks.get(index).setIcon(icon);
 		ImageIcon background = new ImageIcon(properties.getBackground());
@@ -169,14 +171,14 @@ public class UtilsScreenActions extends CommonScreen{
 	}
 	
 
-	protected String getBlock(){
+	protected URL getBlock(){
 		double random = Math.random();
 		int index = (int) (random * UNIQUE_BLOCKS);
 		blockLabels.add(index);
 		return properties.getShape(index);
 	}
 	
-	protected String getBlock(int xcord){
+	protected URL getBlock(int xcord){
 		double random = Math.random();
 		int index = (int) (random * UNIQUE_BLOCKS);
 		blockLabels.set(xcord, index);
@@ -200,7 +202,7 @@ public class UtilsScreenActions extends CommonScreen{
 	protected void enableBlocks(){
 		for(int x = 0; x < blocks.size(); x++){
 			blocks.get(x).setEnabled(true);
-			String path = getBlock(x);
+			URL path = getBlock(x);
 			ImageIcon blockLabel = new ImageIcon(path);
 			blocks.get(x).setIcon(blockLabel);
 		}

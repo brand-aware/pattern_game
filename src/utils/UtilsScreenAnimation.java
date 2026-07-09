@@ -1,5 +1,7 @@
 package utils;
 
+import java.net.URL;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -21,7 +23,7 @@ public class UtilsScreenAnimation extends UtilsScreenActions{
 			ImageIcon icon;
 			if(connected != null){
 				int index = connected.get(connectedSize - 1);
-				String removedPath = properties.getRemovedImg();
+				URL removedPath = properties.getRemovedImg();
 				icon = new ImageIcon(removedPath);
 				JLabel background = allBackgrounds.get(index);
 				background.setIcon(icon);
@@ -47,8 +49,8 @@ public class UtilsScreenAnimation extends UtilsScreenActions{
 			if(connected != null){
 				int index = origConn.get(shiftCounter);
 				//System.out.println(", index: " + index);
-				String cover = properties.getCover();
-				String backgroundPath = properties.getBackground();
+				URL cover = properties.getCover();
+				URL backgroundPath = properties.getBackground();
 				icon = new ImageIcon(cover);
 				icon2 = new ImageIcon(backgroundPath);
 				JLabel background = allBackgrounds.get(index);

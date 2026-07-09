@@ -12,6 +12,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
@@ -45,7 +46,8 @@ public class Screen extends UtilsScreenRoot implements IBoardOutline{
 		screenPage = new JFrame(HEADER);
 		screenPage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		String imageDir = properties.getImageDir();
-		Image imageIcon = Toolkit.getDefaultToolkit().getImage(imageDir + File.separator + "company.png");
+		URL path = getClass().getResource(imageDir + "/company.png");
+		Image imageIcon = Toolkit.getDefaultToolkit().getImage(path);
 		screenPage.setIconImage(imageIcon);
 		screenPage.setResizable(false);
 		screenPage.setPreferredSize(new Dimension(GAME_WIDTH + 5, totalHeight + 64));
@@ -326,7 +328,7 @@ public class Screen extends UtilsScreenRoot implements IBoardOutline{
 		time.setText(output.format(previousTime));
 		unhighlight();
 		for(int x = 0; x < blocks.size(); x++){
-			String path = getBlock(x);
+			URL path = getBlock(x);
 			ImageIcon blockLabel = new ImageIcon(path);
 			blocks.get(x).setIcon(blockLabel);
 		}

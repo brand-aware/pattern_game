@@ -7,70 +7,71 @@
 package core;
 
 import java.io.File;
+import java.net.URL;
 
 public class Properties {
 	
 	private Screen screen;
 	private String rootDir;
-	private String[] shapes;
-	private String background;
-	private String backgroundMatching;
-	private String removedImg;
-	private String title;
+	private URL[] shapes;
+	private URL background;
+	private URL backgroundMatching;
+	private URL removedImg;
+	private URL title;
 	private String highScores;
-	private String cover;
-	private String gameBackground;
+	private URL cover;
+	private URL gameBackground;
 	
 	public Properties(String root){
 		rootDir = root;
 		
-		shapes = new String[]{
-				rootDir + File.separator + "img" + File.separator + "shape1.png",
-				rootDir + File.separator + "img" + File.separator + "shape2.png",
-				rootDir + File.separator + "img" + File.separator + "shape3.png",
-				rootDir + File.separator + "img" + File.separator + "shape4.png",
-				rootDir + File.separator + "img" + File.separator + "shape5.png",
-				rootDir + File.separator + "img" + File.separator + "shape6.png"
+		shapes = new URL[]{
+				getClass().getResource("/img/shape1.png"),
+				getClass().getResource("/img/shape2.png"),
+				getClass().getResource("/img/shape3.png"),
+				getClass().getResource("/img/shape4.png"),
+				getClass().getResource("/img/shape5.png"),
+				getClass().getResource("/img/shape6.png")
 		};
 		
-		background = rootDir + File.separator + "img" + File.separator + "background.png";
-		backgroundMatching = rootDir + File.separator + "img" + File.separator + "background_matching.png";
-		title = rootDir + File.separator + "img" + File.separator + "logo.png";
+		background = getClass().getResource("/img/background.png");
+		backgroundMatching = getClass().getResource("/img/background_matching.png");
+		title = getClass().getResource("/img/logo.png");
 		highScores = rootDir + File.separator + "high_scores";
-		cover = rootDir + File.separator + "img" + File.separator + "cover.png";
-		gameBackground = rootDir + File.separator + "img" + File.separator + "gameBackground.png";
-		removedImg = rootDir + File.separator + "img" + File.separator + "removed.png";
+		cover = getClass().getResource("/img/cover.png");
+		gameBackground = getClass().getResource("/img/gameBackground.png");
+		removedImg = getClass().getResource("/img/removed.png");
 	}
 	
 	public String getRoot(){
 		return rootDir;
 	}
-	public String getShape(int index){
+	public URL getShape(int index){
 		return shapes[index];
 	}
-	public String getGameBackground(){
+	public URL getGameBackground(){
 		return gameBackground;
 	}
-	public String getBackground(){
+	public URL getBackground(){
 		return background;
 	}
-	public String getBackgroundMatching(){
+	public URL getBackgroundMatching(){
 		return backgroundMatching;
 	}
-	public String getRemovedImg() {
+	public URL getRemovedImg() {
 		return removedImg;
 	}
-	public String getTitle(){
+	public URL getTitle(){
 		return title;
 	}
 	public String getHighScores(){
 		return highScores;
 	}
-	public String getCover(){
+	public URL getCover(){
 		return cover;
 	}
 	public String getImageDir(){
-		return rootDir + File.separator + "img";
+		return "/img";
 	}
 	public void setScreen(Screen s){
 		screen = s;

@@ -6,6 +6,8 @@
  */
 package utils;
 
+import java.net.URL;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -22,7 +24,7 @@ public class UtilsScreenRoot extends UtilsScreenAnimation{
 		for(int x = 0; x < (WIDTH * HEIGHT); x++){
 			//System.out.print(x + ",");
 			background = new JLabel();
-			String path = properties.getBackground();
+			URL path = properties.getBackground();
 			ImageIcon icon = new ImageIcon(path);
 			background.setIcon(icon);
 			background.setOpaque(true);
