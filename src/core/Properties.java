@@ -6,7 +6,6 @@
  */
 package core;
 
-import java.io.File;
 import java.net.URL;
 
 public class Properties {
@@ -37,7 +36,7 @@ public class Properties {
 		background = getClass().getResource("/img/background.png");
 		backgroundMatching = getClass().getResource("/img/background_matching.png");
 		title = getClass().getResource("/img/logo.png");
-		highScores = rootDir + File.separator + "high_scores";
+			
 		cover = getClass().getResource("/img/cover.png");
 		gameBackground = getClass().getResource("/img/gameBackground.png");
 		removedImg = getClass().getResource("/img/removed.png");
