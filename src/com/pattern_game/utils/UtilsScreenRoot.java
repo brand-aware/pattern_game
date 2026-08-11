@@ -4,7 +4,7 @@
  * product of - ???
  * 2017
  */
-package utils;
+package com.pattern_game.utils;
 
 import java.net.URL;
 
@@ -12,7 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-import core.Properties;
+import com.pattern_game.core.Properties;
 
 public class UtilsScreenRoot extends UtilsScreenAnimation{
 	

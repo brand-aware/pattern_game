@@ -4,7 +4,7 @@
  * product of - ???
  * 2017
  */
-package utils;
+package com.pattern_game.utils;
 
 import java.util.ArrayList;
 

@@ -4,14 +4,14 @@
  * product of - ???
  * 2017
  */
-package utils;
+package com.pattern_game.utils;
 
 import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-import core.CommonScreen;
+import com.pattern_game.core.CommonScreen;
 
 public class UtilsScreenActions extends CommonScreen{
 	

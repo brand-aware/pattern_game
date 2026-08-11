@@ -4,7 +4,7 @@
  * product of - ???
  * 2017
  */
-package core;
+package com.pattern_game.core;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 
-import utils.Tools;
+import com.pattern_game.utils.Tools;
 
 public class ButtonHandlerScreen implements ActionListener{
 

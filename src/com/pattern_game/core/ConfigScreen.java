@@ -4,7 +4,7 @@
  * product of - ???
  * 2017
  */
-package core;
+package com.pattern_game.core;
 
 public class ConfigScreen {
 	

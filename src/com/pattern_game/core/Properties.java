@@ -4,7 +4,7 @@
  * product of - ???
  * 2017
  */
-package core;
+package com.pattern_game.core;
 
 import java.net.URL;
 
@@ -25,21 +25,21 @@ public class Properties {
 		rootDir = root;
 		
 		shapes = new URL[]{
-				getClass().getResource("/img/shape1.png"),
-				getClass().getResource("/img/shape2.png"),
-				getClass().getResource("/img/shape3.png"),
-				getClass().getResource("/img/shape4.png"),
-				getClass().getResource("/img/shape5.png"),
-				getClass().getResource("/img/shape6.png")
+				getClass().getResource("/com/pattern_game/img/shape1.png"),
+				getClass().getResource("/com/pattern_game/img/shape2.png"),
+				getClass().getResource("/com/pattern_game/img/shape3.png"),
+				getClass().getResource("/com/pattern_game/img/shape4.png"),
+				getClass().getResource("/com/pattern_game/img/shape5.png"),
+				getClass().getResource("/com/pattern_game/img/shape6.png")
 		};
 		
-		background = getClass().getResource("/img/background.png");
-		backgroundMatching = getClass().getResource("/img/background_matching.png");
-		title = getClass().getResource("/img/logo.png");
+		background = getClass().getResource("/com/pattern_game/img/background.png");
+		backgroundMatching = getClass().getResource("/com/pattern_game/img/background_matching.png");
+		title = getClass().getResource("/com/pattern_game/img/logo.png");
 			
-		cover = getClass().getResource("/img/cover.png");
-		gameBackground = getClass().getResource("/img/gameBackground.png");
-		removedImg = getClass().getResource("/img/removed.png");
+		cover = getClass().getResource("/com/pattern_game/img/cover.png");
+		gameBackground = getClass().getResource("/com/pattern_game/img/gameBackground.png");
+		removedImg = getClass().getResource("/com/pattern_game/img/removed.png");
 	}
 	
 	public String getRoot(){
@@ -70,7 +70,7 @@ public class Properties {
 		return cover;
 	}
 	public String getImageDir(){
-		return "/img";
+		return "/com/pattern_game/img";
 	}
 	public void setScreen(Screen s){
 		screen = s;

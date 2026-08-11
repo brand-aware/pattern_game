@@ -5,7 +5,7 @@
  * brand-aware
  * 2017
  */
-package core;
+package com.pattern_game.core;
 
 import java.awt.Dimension;
 import java.awt.Image;
@@ -24,12 +24,13 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import com.pattern_game.utils.Tools;
+import com.pattern_game.utils.UtilsScreenRoot;
+
 import highscores.HighScores;
 import highscores.IBoardOutline;
 import highscores.NameInput;
 import highscores.hsProperties;
-import utils.Tools;
-import utils.UtilsScreenRoot;
 
 public class Screen extends UtilsScreenRoot implements IBoardOutline{
 	

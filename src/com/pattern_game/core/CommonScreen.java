@@ -4,7 +4,7 @@
  * product of - ???
  * 2017
  */
-package core;
+package com.pattern_game.core;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -16,8 +16,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import com.pattern_game.utils.Tools;
+
 import highscores.NameInput;
-import utils.Tools;
 
 public class CommonScreen extends ConfigScreen{
 

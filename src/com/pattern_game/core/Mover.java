@@ -4,11 +4,11 @@
  * product of - ???
  * 2017
  */
-package core;
+package com.pattern_game.core;
 
 import java.io.IOException;
 
-import core.Properties;
+import com.pattern_game.core.Properties;
 
 public class Mover implements Runnable{
 	

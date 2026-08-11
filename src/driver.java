@@ -4,9 +4,9 @@
  * product of - ???
  * 2017
  */
-import core.Mover;
-import core.Properties;
-import core.Screen;
+import com.pattern_game.core.Mover;
+import com.pattern_game.core.Properties;
+import com.pattern_game.core.Screen;
 
 public class driver {
 

@@ -1,4 +1,4 @@
-package utils;
+package com.pattern_game.utils;
 
 import java.net.URL;
 
